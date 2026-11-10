@@ -36,7 +36,7 @@
   "logo": "https://www.mrpowerwashandlawn.com/img/logo.png",
   "description": "Pressure washing, soft washing and lawn maintenance for homes and businesses in San Antonio and surrounding areas since 2006.",
   "address": {"@type": "PostalAddress","streetAddress": "8407 Rocky Path St","addressLocality": "San Antonio","addressRegion": "TX","postalCode": "78254","addressCountry": "US"},
-  "areaServed": [{ "@type": "City", "name": "San Antonio" }, "San Antonio and surrounding areas"],
+  "areaServed": ["San Antonio","Helotes","Leon Valley","Alamo Ranch","Stone Oak","Shavano Park","Castle Hills","Alamo Heights","Boerne","Converse","Live Oak","Universal City","Schertz","Castroville"],
   "sameAs": ["https://www.facebook.com/MrPowerWashandLawn/","https://www.youtube.com/channel/UCnP8NTQELDP0OR1kMJaQDmw","https://maps.google.com/?cid=10332113702152878574","https://www.yelp.com/biz/mr-powerwash-and-lawn-maintenance-san-antonio-3"],
   "hasOfferCatalog": {"@type": "OfferCatalog","name": "Exterior cleaning and lawn services","itemListElement": [
     {"@type": "Offer","itemOffered": {"@type": "Service","name": "House washing and soft washing"}},
@@ -212,7 +212,10 @@ textarea{min-height:80px;resize:vertical}
 /* Areas */
 .areas{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:center}
 @media (max-width:860px){.areas{grid-template-columns:1fr}}
-.map{border:0;width:100%;aspect-ratio:4/3;border-radius:10px;background:#dfe6ec}
+.area-box{background:#fff;border:1px solid var(--rule);border-top:6px solid var(--green);border-radius:10px;padding:1.8rem}
+.area-box h3{color:var(--navy)}
+.area-box .area-list{margin:1.2rem 0 1.4rem}
+.area-box p{color:var(--slate);margin:0}
 
 /* FAQ */
 .faq{max-width:860px;margin:0 auto}
@@ -443,7 +446,13 @@ footer{background:var(--navy-2);color:#b7c6da;border-top:5px solid var(--green);
       <p class="lede">Based on the northwest side of San Antonio, we serve homes and businesses across the city and the surrounding areas. Not sure if we come to you? Give us a call.</p>
       <p style="margin-top:1.4rem"><a class="btn btn-go" href="tel:+12108872003"><svg><use href="#i-phone"/></svg>Call (210) 887-2003</a></p>
     </div>
-    <iframe class="map" title="Mr PowerWash & Lawn on Google Maps" loading="lazy" src="https://maps.google.com/maps?q=8407%20Rocky%20Path%20St%2C%20San%20Antonio%2C%20TX%2078254&z=10&output=embed"></iframe>
+    <div class="area-box">
+      <h3>Areas we serve</h3>
+      <ul class="checks area-list">
+        <li>San Antonio</li><li>Helotes</li><li>Leon Valley</li><li>Alamo Ranch</li><li>Stone Oak</li><li>Shavano Park</li><li>Castle Hills</li><li>Alamo Heights</li><li>Boerne</li><li>Converse</li><li>Live Oak</li><li>Universal City</li><li>Schertz</li><li>Castroville</li>
+      </ul>
+      <p>Don't see your area? Call or text <a href="tel:+12108872003">(210) 887-2003</a>.</p>
+    </div>
   </div>
 </section>
 
