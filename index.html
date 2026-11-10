@@ -186,6 +186,21 @@ textarea{min-height:80px;resize:vertical}
 .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.4rem .8rem .6rem;background:linear-gradient(transparent,rgba(4,42,92,.85));color:#fff;font-weight:600;font-size:.9rem}
 @media (max-width:760px){.gallery{grid-template-columns:1fr 1fr}}
 
+/* Videos */
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.shorts{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.6rem}
+@media (max-width:900px){.vids{grid-template-columns:1fr}.shorts{grid-template-columns:1fr 1fr}}
+.vid{margin:0}
+.vid figcaption{font-weight:700;color:var(--navy);margin-top:.6rem;line-height:1.35}
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:10px;overflow:hidden;cursor:pointer;background:#0b1a2b center/cover no-repeat}
+.shorts .yt{aspect-ratio:9/16}
+.yt::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(4,42,92,.55))}
+.yt .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:var(--green);display:grid;place-items:center;z-index:1;box-shadow:0 6px 20px rgba(0,0,0,.35);transition:transform .15s}
+.yt:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.yt .play svg{width:28px;height:28px;margin-left:4px;color:var(--navy-2)}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.sub-head{font-family:var(--head);font-size:1.6rem;color:var(--navy);margin:3.4rem 0 0;text-align:center}
+
 /* Reviews */
 .reviews-band{background:var(--navy);color:#fff}
 .reviews-band h2{color:#fff}
@@ -266,6 +281,7 @@ footer{background:var(--navy-2);color:#b7c6da;border-top:5px solid var(--green);
   <symbol id="i-cal" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></symbol>
   <symbol id="i-paint" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 4h13v5H4zM17 6.5h3V12h-8v3M10 15h4v6h-4z"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></symbol>
   <symbol id="i-award" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3a6 6 0 1 1 0 12 6 6 0 0 1 0-12zM8.5 14L7 21l5-3 5 3-1.5-7"/></symbol>
 </svg>
 
@@ -277,7 +293,7 @@ footer{background:var(--navy-2);color:#b7c6da;border-top:5px solid var(--green);
 <header class="site-head"><div class="wrap">
   <a class="logo" href="#top"><img src="img/logo.png" alt="Mr PowerWash Lawn Maintenance logo" width="86" height="58"></a>
   <nav class="site-nav" aria-label="Main">
-    <a href="#services">Services</a><a href="#work">Our Work</a><a href="#reviews">Reviews</a><a href="#areas">Areas Served</a><a href="#faq">FAQ</a>
+    <a href="#services">Services</a><a href="#work">Our Work</a><a href="#videos">Videos</a><a href="#reviews">Reviews</a><a href="#areas">Areas Served</a><a href="#faq">FAQ</a>
   </nav>
   <a class="head-phone" href="tel:+12108872003">(210) 887-2003</a>
   <a class="btn btn-go" href="#quote">Get a Quote</a>
@@ -340,11 +356,11 @@ footer{background:var(--navy-2);color:#b7c6da;border-top:5px solid var(--green);
       <p class="lede">Most companies wash or mow. We do both, so the outside of your property is handled by one crew.</p>
     </div>
     <div class="services">
-      <article class="svc"><img loading="lazy" src="https://images.unsplash.com/photo-1718152521364-b9655b8a7926?auto=format&fit=crop&w=800&h=500&q=75" alt="Driveway and sidewalk pressure washing"><div class="body"><span class="tag wash">Pressure washing</span><h3>Driveways & Sidewalks</h3><p>Lift years of dirt, oil stains and mildew out of concrete so it looks new again.</p><a class="more" href="#quote">Get a quote</a></div></article>
+      <article class="svc"><img loading="lazy" src="img/work/driveway-trailer.jpg" alt="Driveway pressure washing with a surface cleaner"><div class="body"><span class="tag wash">Pressure washing</span><h3>Driveways & Sidewalks</h3><p>Lift years of dirt, oil stains and mildew out of concrete so it looks new again.</p><a class="more" href="#quote">Get a quote</a></div></article>
       <article class="svc"><img loading="lazy" src="https://images.unsplash.com/photo-1677956787377-a0f32c0974af?auto=format&fit=crop&w=800&h=500&q=75" alt="House soft washing"><div class="body"><span class="tag wash">Soft washing</span><h3>House & Siding Washing</h3><p>Low-pressure soft washing with cleaning solutions that's safe for siding, stucco, brick and paint.</p><a class="more" href="#quote">Get a quote</a></div></article>
       <article class="svc"><img loading="lazy" src="https://images.unsplash.com/photo-1779517226302-029fb0f68ba1?auto=format&fit=crop&w=800&h=500&q=75" alt="Commercial pressure washing"><div class="body"><span class="tag wash">Commercial</span><h3>Commercial & Dumpster Pads</h3><p>Storefronts, sidewalks, dumpster pads and heavy equipment, with hot water for grease and grime.</p><a class="more" href="#quote">Get a quote</a></div></article>
-      <article class="svc"><img loading="lazy" src="https://images.unsplash.com/photo-1780419748459-075ce111534a?auto=format&fit=crop&w=800&h=500&q=75" alt="Lawn mowing service"><div class="body"><span class="tag lawn">Lawn care</span><h3>Lawn Maintenance</h3><p>Mowing, edging and blowing for homes and businesses, with clippings cleared off the concrete.</p><a class="more" href="#quote">Get a quote</a></div></article>
-      <article class="svc"><img loading="lazy" src="https://images.unsplash.com/photo-1689728318937-17d24bc0a65c?auto=format&fit=crop&w=800&h=500&q=75" alt="Shrub and tree trimming"><div class="body"><span class="tag lawn">Lawn care</span><h3>Trimming & Cleanup</h3><p>Shrub trimming, minor to moderate tree trimming, weed removal, mulch and leaf cleanup.</p><a class="more" href="#quote">Get a quote</a></div></article>
+      <article class="svc"><img loading="lazy" src="img/work/mowing.jpg" alt="Mowing a San Antonio lawn"><div class="body"><span class="tag lawn">Lawn care</span><h3>Lawn Maintenance</h3><p>Mowing, edging and blowing for homes and businesses, with clippings cleared off the concrete.</p><a class="more" href="#quote">Get a quote</a></div></article>
+      <article class="svc"><img loading="lazy" src="img/work/shrub-trim.jpg" alt="Shrub trimming"><div class="body"><span class="tag lawn">Lawn care</span><h3>Trimming & Cleanup</h3><p>Shrub trimming, minor to moderate tree trimming, weed removal, mulch and leaf cleanup.</p><a class="more" href="#quote">Get a quote</a></div></article>
       <article class="svc"><img loading="lazy" src="https://images.unsplash.com/photo-1782594700873-bbeefef37e11?auto=format&fit=crop&w=800&h=500&q=75" alt="Clean home exterior with manicured lawn"><div class="body"><span class="tag lawn">Bundle</span><h3>Wash + Lawn Packages</h3><p>Get your house, concrete and yard done together for a complete curb appeal refresh.</p><a class="more" href="#quote">Get a quote</a></div></article>
     </div>
   </div>
@@ -353,7 +369,7 @@ footer{background:var(--navy-2);color:#b7c6da;border-top:5px solid var(--green);
 <section class="block tint">
   <div class="wrap">
     <div class="row">
-      <div class="media"><img loading="lazy" src="https://images.unsplash.com/photo-1718152470408-cfeebeb6b9fc?auto=format&fit=crop&w=1000&h=750&q=75" alt="Pressure washing concrete pavement in San Antonio"></div>
+      <div class="media"><img loading="lazy" src="img/work/driveway-surface-cleaner.jpg" alt="Surface cleaner on a driveway in front of a garage in San Antonio"></div>
       <div>
         <h2>Pressure Washing in San Antonio</h2>
         <p>We match the method to the surface. High pressure for concrete, soft washing for siding and paint, and hot water with cleaning solutions for oil, grease and grime that cold water won't move.</p>
@@ -401,14 +417,32 @@ footer{background:var(--navy-2);color:#b7c6da;border-top:5px solid var(--green);
       <p class="lede">See more on our <a href="https://www.youtube.com/channel/UCnP8NTQELDP0OR1kMJaQDmw" target="_blank" rel="noopener">YouTube channel</a> and <a href="https://www.facebook.com/MrPowerWashandLawn/" target="_blank" rel="noopener">Facebook page</a>.</p>
     </div>
     <div class="gallery">
-      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1718152423993-a29048dbc223?auto=format&fit=crop&w=1000&h=1000&q=75" alt="Pressure washing a sidewalk"><figcaption>Sidewalk pressure washing</figcaption></figure>
-      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1734303023491-db8037a21f09?auto=format&fit=crop&w=500&h=500&q=75" alt="Mowing a residential lawn"><figcaption>Weekly mowing</figcaption></figure>
-      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1581883579507-019c44b711cb?auto=format&fit=crop&w=500&h=500&q=75" alt="Pressure washing equipment in use"><figcaption>Surface cleaning</figcaption></figure>
-      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1690068023694-053da714f95f?auto=format&fit=crop&w=500&h=500&q=75" alt="Lawn mowing in progress"><figcaption>Lawn maintenance</figcaption></figure>
-      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1718152521364-b9655b8a7926?auto=format&fit=crop&w=500&h=500&q=75" alt="Concrete pressure washing"><figcaption>Concrete cleaning</figcaption></figure>
-      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1764969370921-7c8df49171cd?auto=format&fit=crop&w=500&h=500&q=75" alt="Freshly mowed lawn"><figcaption>Fresh cut</figcaption></figure>
-      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1779636489744-c7243917ace0?auto=format&fit=crop&w=500&h=500&q=75" alt="Mowing an overgrown lawn"><figcaption>Overgrown lot cleanup</figcaption></figure>
-      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1458245201577-fc8a130b8829?auto=format&fit=crop&w=500&h=500&q=75" alt="Lawn mower on green grass"><figcaption>Residential lawn care</figcaption></figure>
+      <figure><img loading="lazy" src="img/work/driveway-trailer.jpg" alt="Mr PowerWash crew cleaning a driveway with a surface cleaner"><figcaption>Driveway pressure washing</figcaption></figure>
+      <figure><img loading="lazy" src="img/work/pool-deck.jpg" alt="Clean line on a pool deck mid-wash"><figcaption>Pool deck washing</figcaption></figure>
+      <figure><img loading="lazy" src="img/work/backyard-clearing.jpg" alt="Clearing trees to open up a backyard"><figcaption>Backyard clearing</figcaption></figure>
+      <figure><img loading="lazy" src="img/work/curb-clean.jpg" alt="Curb and sidewalk half cleaned, showing the difference"><figcaption>Curb and sidewalk cleaning</figcaption></figure>
+      <figure><img loading="lazy" src="img/work/shrub-trim.jpg" alt="Trimming commercial shrubs with a hedge trimmer"><figcaption>Shrub trimming</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="videos">
+  <div class="wrap">
+    <div class="sec-head center">
+      <h2>Watch Us Work</h2>
+      <p class="lede">Real jobs around San Antonio, straight from our <a href="https://www.youtube.com/channel/UCnP8NTQELDP0OR1kMJaQDmw" target="_blank" rel="noopener">YouTube channel</a>.</p>
+    </div>
+    <div class="vids">
+      <figure class="vid"><button class="yt" data-id="ZGrWDLhquB0" style="background-image:url('https://i.ytimg.com/vi/ZGrWDLhquB0/hqdefault.jpg')" aria-label="Play video: Filthy driveway to sparkling clean"><span class="play"><svg><use href="#i-play"/></svg></span></button><figcaption>Filthy driveway to sparkling clean</figcaption></figure>
+      <figure class="vid"><button class="yt" data-id="TjmQEWWyTAs" style="background-image:url('https://i.ytimg.com/vi/TjmQEWWyTAs/hqdefault.jpg')" aria-label="Play video: 20 years of grime off a walkway"><span class="play"><svg><use href="#i-play"/></svg></span></button><figcaption>20 years of grime off a walkway</figcaption></figure>
+      <figure class="vid"><button class="yt" data-id="E3yyNSZB7MI" style="background-image:url('https://i.ytimg.com/vi/E3yyNSZB7MI/hqdefault.jpg')" aria-label="Play video: Pressure washing and lawn care at the same time"><span class="play"><svg><use href="#i-play"/></svg></span></button><figcaption>Pressure washing and lawn care at the same time</figcaption></figure>
+    </div>
+    <h3 class="sub-head">Quick clips</h3>
+    <div class="shorts">
+      <figure class="vid"><button class="yt" data-id="V1DFSG5KDkI" style="background-image:url('img/work/curb-clean.jpg')" aria-label="Play clip: Bright white means super clean"><span class="play"><svg><use href="#i-play"/></svg></span></button><figcaption>Bright white means clean</figcaption></figure>
+      <figure class="vid"><button class="yt" data-id="M_xjZqQEnR4" style="background-image:url('img/work/pool-deck.jpg')" aria-label="Play clip: Pool deck washing"><span class="play"><svg><use href="#i-play"/></svg></span></button><figcaption>Pool deck washing</figcaption></figure>
+      <figure class="vid"><button class="yt" data-id="i0QJ_IMejgw" style="background-image:url('img/work/backyard-clearing.jpg')" aria-label="Play clip: Opening up a backyard"><span class="play"><svg><use href="#i-play"/></svg></span></button><figcaption>Opening up a backyard</figcaption></figure>
+      <figure class="vid"><button class="yt" data-id="-oX8_Ks7mTQ" style="background-image:url('img/work/mowing.jpg')" aria-label="Play clip: Mowing"><span class="play"><svg><use href="#i-play"/></svg></span></button><figcaption>Mowing day</figcaption></figure>
     </div>
   </div>
 </section>
@@ -505,6 +539,21 @@ footer{background:var(--navy-2);color:#b7c6da;border-top:5px solid var(--green);
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Videos load only when clicked, so the page stays fast.
+document.querySelectorAll('.yt').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0&playsinline=1';
+    f.title = b.getAttribute('aria-label');
+    f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    var box = document.createElement('div');
+    box.className = 'yt';
+    box.appendChild(f);
+    b.replaceWith(box);
+  });
+});
 
 /* REVIEWS: paste real customer reviews here, copied from Google, Facebook or Yelp.
    Example: { name: "First name L.", where: "Google review", stars: 5, text: "What the customer wrote." }, */
